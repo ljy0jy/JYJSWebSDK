@@ -125,7 +125,7 @@
 		7677E0DCD91387AC9F29096354F396B1 /* Pods-JYJSWebSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JYJSWebSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		771420D14B5367658BC48E19014486E8 /* SKJavaScriptBridge-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SKJavaScriptBridge-Info.plist"; sourceTree = "<group>"; };
 		79CDB5DF8851C1F111273D263A1892BB /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WebViewJavascriptBridgeBase.m; path = SKJavaScriptBridge/WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
-		81B2B85F5DD933FF014D0B9FC48A7B27 /* JYJSWebSDK */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JYJSWebSDK; path = JYJSWebSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B2B85F5DD933FF014D0B9FC48A7B27 /* JYJSWebSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JYJSWebSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82555E9519D4D25C90070FAB78DA4A83 /* Pods-JYJSWebSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JYJSWebSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8412D25BBFC001EF4831B31338D4A6BC /* WebViewJavascriptLeakAvoider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WebViewJavascriptLeakAvoider.h; path = SKJavaScriptBridge/WebViewJavascriptLeakAvoider.h; sourceTree = "<group>"; };
 		8636631DC003D65278FDEDDE0E6F030A /* SKJavaScriptBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SKJavaScriptBridge.debug.xcconfig; sourceTree = "<group>"; };
@@ -136,12 +136,12 @@
 		984ABE6D26972B0792D39E5E7AA5366F /* Pods-JYJSWebSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JYJSWebSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9B32A7FA1110325A6C26F584FD237EF1 /* Pods-JYJSWebSDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JYJSWebSDK_Example-frameworks.sh"; sourceTree = "<group>"; };
 		9B6E68CB10141286AF5A06830080B6E6 /* JYJSWebSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JYJSWebSDK-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DBE2396D215B0A449AD732841E80116 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
-		A3C6E6F79506A4D6B9F1E62198E208B8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		A3C6E6F79506A4D6B9F1E62198E208B8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A4E22D4F820A3F49B9FD1E65FF23A3AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		A7B7813FEC318CF792411E1F5D3DE484 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WebViewJavascriptBridge.h; path = SKJavaScriptBridge/WebViewJavascriptBridge.h; sourceTree = "<group>"; };
-		AACDF07627CF7B176E479B49329B1E59 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		AACDF07627CF7B176E479B49329B1E59 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		ABD976EFC9DC49E49A59F1D5329E235F /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WebViewJavascriptBridgeBase.h; path = SKJavaScriptBridge/WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
 		AC71256FD2AF7C10F660A0279F2403F2 /* Pods-JYJSWebSDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JYJSWebSDK_Example-dummy.m"; sourceTree = "<group>"; };
 		AE397749D6B924DF030765E008A4BAF4 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WebViewJavascriptBridge.m; path = SKJavaScriptBridge/WebViewJavascriptBridge.m; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		BB8F87FC3BB641C8864F849BF848A6DF /* SKJavaScriptBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SKJavaScriptBridge.release.xcconfig; sourceTree = "<group>"; };
 		BD75EF388F036668CC60CF4480BC7BAB /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		C16625945DE3009C62BF4302AAC99058 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		C289A6C49DD29168B2E059981B8130E3 /* JYJSWebSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = JYJSWebSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C289A6C49DD29168B2E059981B8130E3 /* JYJSWebSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = JYJSWebSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C56103BA9980C8CAA7A8F0DC4CC76B62 /* JYJSWebSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JYJSWebSDK.h; path = JYJSWebSDK/Classes/JYJSWebSDK.h; sourceTree = "<group>"; };
 		C59EE8D2BAB54AA3162A2640433FDDA2 /* WebViewJavascriptLeakAvoider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WebViewJavascriptLeakAvoider.m; path = SKJavaScriptBridge/WebViewJavascriptLeakAvoider.m; sourceTree = "<group>"; };
 		C7D3AE826F7E37FBF80F995DC9C3EFC9 /* Pods-JYJSWebSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JYJSWebSDK_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 		A02E5677C3FE1A15FBEB7841A6EAA363 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81B2B85F5DD933FF014D0B9FC48A7B27 /* JYJSWebSDK */,
+				81B2B85F5DD933FF014D0B9FC48A7B27 /* JYJSWebSDK.framework */,
 				2F46F6FC271CE299890D18D8E45C9B5C /* Pods-JYJSWebSDK_Example */,
 				5D5EFFE31BB0AFA0448B502F546C0889 /* Pods-JYJSWebSDK_Tests */,
 				71C58D66AEFF6CD7974EF838C1501DE0 /* SKJavaScriptBridge */,
@@ -400,7 +400,6 @@
 				3672104CB591A12E3B2850EA6FF253E7 /* Resources */,
 				218F68B3CF3210C6026B30BFB77F7D9B /* Support Files */,
 			);
-			name = SVProgressHUD;
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -436,7 +435,6 @@
 				C59EE8D2BAB54AA3162A2640433FDDA2 /* WebViewJavascriptLeakAvoider.m */,
 				B9B88E6A4B4FFD9FD53E4FCDE72F992F /* Support Files */,
 			);
-			name = SKJavaScriptBridge;
 			path = SKJavaScriptBridge;
 			sourceTree = "<group>";
 		};
@@ -554,7 +552,7 @@
 			);
 			name = JYJSWebSDK;
 			productName = JYJSWebSDK;
-			productReference = 81B2B85F5DD933FF014D0B9FC48A7B27 /* JYJSWebSDK */;
+			productReference = 81B2B85F5DD933FF014D0B9FC48A7B27 /* JYJSWebSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D6BDD9024BC3CFC73D9ED5422A621AE2 /* SKJavaScriptBridge */ = {
@@ -1000,14 +998,16 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/JYJSWebSDK/JYJSWebSDK.modulemap";
 				PRODUCT_MODULE_NAME = JYJSWebSDK;
 				PRODUCT_NAME = JYJSWebSDK;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1090,14 +1090,16 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/JYJSWebSDK/JYJSWebSDK.modulemap";
 				PRODUCT_MODULE_NAME = JYJSWebSDK;
 				PRODUCT_NAME = JYJSWebSDK;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1159,8 +1161,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

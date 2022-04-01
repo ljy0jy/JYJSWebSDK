@@ -6,7 +6,7 @@
 //
 
 #import "JYJSWebViewController.h"
-#import "SVProgressHUD.h"
+#import "SVProgressHUD/SVProgressHUD.h"
 #import <WebKit/WebKit.h>
 #import "sys/utsname.h"
 #import <AVFoundation/AVCaptureDevice.h>

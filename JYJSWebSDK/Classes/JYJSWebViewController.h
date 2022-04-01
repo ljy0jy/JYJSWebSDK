@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WebViewJavascriptBridge.h"
+#import "SKJavaScriptBridge/WebViewJavascriptBridge.h"
 NS_ASSUME_NONNULL_BEGIN
 @class WKWebView,WebViewJavascriptBridge;
 @interface JYJSWebViewController : UIViewController

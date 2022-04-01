@@ -1,0 +1,6 @@
+framework module JYJSWebSDK {
+  umbrella header "JYJSWebSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

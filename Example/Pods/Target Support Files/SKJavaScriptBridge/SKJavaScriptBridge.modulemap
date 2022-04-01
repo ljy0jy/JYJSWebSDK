@@ -1,0 +1,6 @@
+framework module SKJavaScriptBridge {
+  umbrella header "SKJavaScriptBridge-umbrella.h"
+
+  export *
+  module * { export * }
+}

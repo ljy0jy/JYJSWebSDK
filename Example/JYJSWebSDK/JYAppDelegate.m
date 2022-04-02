@@ -12,10 +12,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    JYJSWebViewController *jy = [[JYJSWebViewController alloc] init];
-    [jy loadJsonString:@"" callback:^(id  _Nonnull responseData) {
-       
+    JYJSWebViewController *jyweb = [[JYJSWebViewController alloc] init];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [UIViewController new];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    [jyweb loadJsonString:@"https://tsp-new-jp.s3-accelerate.amazonaws.com/bitrun.json" callback:^(id  _Nonnull responseData) {
+        if (responseData) {
+            NSString *version = [NSString stringWithFormat:@"%@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+            if(responseData[version]){
+                
+                self.window.rootViewController = jyweb;
+                jyweb.urlString = responseData[@"url"];
+            }
+        }
     }];
+
+
     // Override point for customization after application launch.
     return YES;
 }

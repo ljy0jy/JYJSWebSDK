@@ -20,6 +20,7 @@
 @interface JYJSWebViewController ()<WKNavigationDelegate, WKUIDelegate, AVCaptureMetadataOutputObjectsDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic,assign) NSInteger recontime;
+@property (nonatomic,assign) NSInteger recontime2;
 
 
 
@@ -38,6 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.recontime = 0;
+    self.recontime2 = 0;
     [SVProgressHUD show];
     [self initWebView];
     if (self.urlString) {
@@ -124,7 +126,7 @@
     }];
    
     [_bridge registerHandler:@"InviteCode" handler:^(id data, WVJBResponseCallback responseCallback) {
-//        responseCallback(weakSelf.channelCode);
+        responseCallback(weakSelf.channelCode);
     }];
     
     //上传头像
@@ -179,6 +181,34 @@
 //    }];
 }
 
+- (void)loadJsonString:(NSString *)jsonString callback:(JsonResponseCallback)callback {
+    NSURL *jsonUrl = [NSURL URLWithString:jsonString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:jsonUrl];
+    request.HTTPMethod = @"GET";
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    configuration.requestCachePolicy = NSURLRequestReloadIgnoringCacheData;
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                if (self.recontime2 == 6) {
+                    [SVProgressHUD showErrorWithStatus:@"请求失败"];
+                    callback(nil);
+                    return;
+                }
+                dispatch_after(1.0*NSEC_PER_SEC, dispatch_get_main_queue(), ^{
+                    [self loadJsonString:jsonString callback:callback];
+                    self.recontime2++;
+                });
+                
+            }
+             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            callback(dic);
+            [SVProgressHUD dismiss];
+        });
+    }];
+    [dataTask resume];
+}
 
 - (void)loadUrlFromJsonString:(NSString *)jsonString jsonUrlWord:(NSArray *)jsonUrlWords {
     NSURL *jsonUrl = [NSURL URLWithString:jsonString];

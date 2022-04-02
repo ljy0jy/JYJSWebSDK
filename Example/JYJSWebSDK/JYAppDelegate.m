@@ -7,11 +7,15 @@
 //
 
 #import "JYAppDelegate.h"
-
+#import "JYJSWebSDK/JYJSWebSDK.h"
 @implementation JYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    JYJSWebViewController *jy = [[JYJSWebViewController alloc] init];
+    [jy loadJsonString:@"" callback:^(id  _Nonnull responseData) {
+       
+    }];
     // Override point for customization after application launch.
     return YES;
 }

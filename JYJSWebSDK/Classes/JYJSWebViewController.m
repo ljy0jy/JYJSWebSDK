@@ -36,6 +36,11 @@
     return self;
 }
 
+- (void)setUrlString:(NSString *)urlString {
+    _urlString = urlString;
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.recontime = 0;
@@ -43,7 +48,7 @@
     [SVProgressHUD show];
     [self initWebView];
     if (self.urlString) {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
+       
     }else if(self.jsonString) {
         [self loadUrlFromJsonString:self.jsonString jsonUrlWord:self.jsonUrlWords];
     }
@@ -236,7 +241,6 @@
                  url = url[jsonUrlWords[i]];
             }
             self.urlString = url;
-            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
              NSLog(@"JYJSWebViewController: jsonUrl=%@",url);
             [SVProgressHUD dismiss];
         });
@@ -268,6 +272,7 @@
 - (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
     [SVProgressHUD dismiss];
 }
+
 
 #pragma mark -  获得设备型号
 - (NSString *)getiPhoneType{

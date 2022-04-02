@@ -1,5 +1,5 @@
 PODS:
-  - JYJSWebSDK (1.0.0):
+  - JYJSWebSDK (1.0.2):
     - SKJavaScriptBridge (~> 1.0.3)
     - SVProgressHUD
   - SKJavaScriptBridge (1.0.3)
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JYJSWebSDK: a19cc50dd9d55f897c66199f4df148997b09665d
+  JYJSWebSDK: ea8e6fc656de2751231ecf9f451cf6661ca677f1
   SKJavaScriptBridge: 1485c4d7853615a71e55beb3fb662f63e54d0f30
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 

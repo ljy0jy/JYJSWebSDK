@@ -1,6 +1,6 @@
 {
   "name": "JYJSWebSDK",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "summary": "A short description of JYJSWebSDK.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/ljy0jy/JYJSWebSDK",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ljy0jy/JYJSWebSDK.git",
-    "tag": "1.0.2"
+    "tag": "1.0.4"
   },
   "platforms": {
     "ios": "9.0"
@@ -25,6 +25,9 @@
     ],
     "SKJavaScriptBridge": [
       "~> 1.0.3"
+    ],
+    "lottie-ios": [
+      "~>  2.5.3"
     ]
   }
 }

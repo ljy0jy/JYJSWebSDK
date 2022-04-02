@@ -14,6 +14,8 @@
 #import "ScanViewController.h"
 #import "IMProSizeManager.h"
 #import <Photos/Photos.h>
+#import <Lottie/Lottie.h>
+#import "appSize.h"
 
 #define WeakSelf __weak typeof(self) weakSelf = self
 
@@ -21,8 +23,6 @@
 
 @property (nonatomic,assign) NSInteger recontime;
 @property (nonatomic,assign) NSInteger recontime2;
-
-
 
 @end
 
@@ -45,7 +45,6 @@
     [super viewDidLoad];
     self.recontime = 0;
     self.recontime2 = 0;
-    [SVProgressHUD show];
     [self initWebView];
     if (self.urlString) {
        
@@ -56,7 +55,10 @@
 
 - (void)initWebView {
     self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];// 添加属性监听
-    [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+    if (_loadingType == LoadingTypeSVProgress) {
+        [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+    }
+
     if(!_bridge){
               _bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView
               showJSconsole:YES
@@ -71,7 +73,6 @@
     self.webView.opaque = NO;//设置背景色
     [self.view addSubview:_webView];
  
-    
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;//因为用了WKWebViewJavascriptBridge，setWebViewDelegate不走代理
     _webView.scrollView.bounces = false;
@@ -144,49 +145,16 @@
         [self checkPhotoPermission];
     }];
     
-    //FB
-//    [_bridge registerHandler:@"FBLogin" handler:^(id data, WVJBResponseCallback responseCallback) {
-//        FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-//        [login logOut];//切换账号登录Facebook账号时 把之前的login Token清除掉
-//
-//        [login logInWithPermissions:@[@"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult * _Nullable result, NSError * _Nullable error) {
-//            if (error) {
-//                NSLog(@"error %@",error);
-//            }else if (result.isCancelled){
-//                NSLog(@"取消");
-//            }else{
-//                if ([result.grantedPermissions containsObject:@"email"]) {
-//                    if ([FBSDKAccessToken currentAccessToken]) {
-//                        [[[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:nil] startWithCompletionHandler:^(FBSDKGraphRequestConnection * _Nullable connection, id  _Nullable result, NSError * _Nullable error) {
-//                            if (!error) {
-//                                NSLog(@"Fetched User Information:%@%@", result,[FBSDKAccessToken currentAccessToken].tokenString);
-//                                NSString *token = [FBSDKAccessToken currentAccessToken].tokenString;
-//
-//                                responseCallback(token);
-//                            }else {
-//                                NSLog(@"Error %@",error);
-//                            }
-//
-//                        }];
-//                    } else {
-//                        NSLog(@"User is not Logged in");
-//                    }
-//                }
-//            }
-//
-//        }];
-//    }];
-    
-
-    
-    //Line
-//    [_bridge registerHandler:@"LineLogin" handler:^(id data, WVJBResponseCallback responseCallback) {
-//        [[LineSDKLogin sharedInstance] startLoginWithPermissions:@[@"profile", @"friends", @"groups"]];
-//        self.lineLoginResponseCallback = responseCallback;
-//    }];
+   
 }
 
 - (void)loadJsonString:(NSString *)jsonString callback:(JsonResponseCallback)callback {
+    if (_loadingType == LoadingTypeAnimation) {
+        [[UIApplication sharedApplication].keyWindow addSubview:self.animationView];
+        [self.animationView play];
+    }else {
+        [SVProgressHUD show];
+    }
     NSURL *jsonUrl = [NSURL URLWithString:jsonString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:jsonUrl];
     request.HTTPMethod = @"GET";
@@ -197,6 +165,11 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
                 if (self.recontime2 == 6) {
+                    if (self.loadingType == LoadingTypeAnimation) {
+                        [self.animationView removeFromSuperview];
+                    }else {
+                        [SVProgressHUD dismiss];
+                    }
                     [SVProgressHUD showErrorWithStatus:@"请求失败"];
                     callback(nil);
                     return;
@@ -209,7 +182,12 @@
             }
              NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             callback(dic);
-            [SVProgressHUD dismiss];
+            if (self.loadingType == LoadingTypeAnimation) {
+                [self.animationView removeFromSuperview];
+            }else {
+                [SVProgressHUD dismiss];
+            }
+            
         });
     }];
     [dataTask resume];
@@ -257,20 +235,58 @@
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
+
+- (void)setLoadingType:(LoadingType)loadingType {
+    _loadingType = loadingType;
+    switch (loadingType) {
+        case LoadingTypeAnimation:
+            self.animationView = [LOTAnimationView animationNamed:self.animationFile];
+            self.animationView.backgroundColor = [UIColor clearColor];
+            self.animationView.contentMode = UIViewContentModeScaleAspectFit;
+            self.animationView.frame = CGRectMake((QQZScreenWidth-QQZScaleWidth(60))/2, (QQZScreenHeight-QQZScaleWidth(60)-100)/2, QQZScaleWidth(60), QQZScaleWidth(60));
+            self.animationView.loopAnimation = YES;
+            self. animationView.animationProgress = 0;
+            [self.view addSubview:self.animationView];
+            self.animationView = self.animationView;
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+
 - (void)dealloc {
-    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+    if (_loadingType == LoadingTypeSVProgress) {
+        [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+    }
+    
 }
 #pragma mark -  webviewDelegate
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
-    [SVProgressHUD show];
-    
+    if (_loadingType == LoadingTypeSVDefault) {
+        [SVProgressHUD show];
+    }else if (_loadingType == LoadingTypeAnimation) {
+        [self.view addSubview:self.animationView];
+        [self.animationView play];
+    }
 }
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
-    [SVProgressHUD dismiss];
+    
+    if (_loadingType == LoadingTypeAnimation) {
+        [self.animationView removeFromSuperview];
+    }else {
+        [SVProgressHUD dismiss];
+    }
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
-    [SVProgressHUD dismiss];
+    if (_loadingType == LoadingTypeAnimation) {
+        [self.animationView removeFromSuperview];
+    }else {
+        [SVProgressHUD dismiss];
+    }
 }
 
 

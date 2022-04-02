@@ -22,6 +22,9 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		D76AE76B27F82838008C059D /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AE76827F82838008C059D /* img_1.png */; };
+		D76AE76C27F82838008C059D /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AE76927F82838008C059D /* img_0.png */; };
+		D76AE76D27F82838008C059D /* loadingdata.json in Resources */ = {isa = PBXBuildFile; fileRef = D76AE76A27F82838008C059D /* loadingdata.json */; };
 		DBE0B835AD4EAFB192521D78 /* Pods_JYJSWebSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E77006F74E9840FA4F0CEC /* Pods_JYJSWebSDK_Example.framework */; };
 		E61DE8D9D74985848CB4FEAD /* Pods_JYJSWebSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80222B78C9AA0EA50BCD8F62 /* Pods_JYJSWebSDK_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +68,9 @@
 		8F0C7194866A4217CA8825B7 /* Pods-JYJSWebSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYJSWebSDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-JYJSWebSDK_Tests/Pods-JYJSWebSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B1E77006F74E9840FA4F0CEC /* Pods_JYJSWebSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JYJSWebSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D530F00DF54380CD28A6E39A /* Pods-JYJSWebSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYJSWebSDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-JYJSWebSDK_Example/Pods-JYJSWebSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D76AE76827F82838008C059D /* img_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_1.png; sourceTree = "<group>"; };
+		D76AE76927F82838008C059D /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
+		D76AE76A27F82838008C059D /* loadingdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingdata.json; sourceTree = "<group>"; };
 		F182BA012E641419E1023A58 /* Pods-JYJSWebSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYJSWebSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-JYJSWebSDK_Example/Pods-JYJSWebSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F337D424505C2CFC72DBD427 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +138,7 @@
 		6003F593195388D20070C39A /* Example for JYJSWebSDK */ = {
 			isa = PBXGroup;
 			children = (
+				D76AE76627F82825008C059D /* animation */,
 				6003F59C195388D20070C39A /* JYAppDelegate.h */,
 				6003F59D195388D20070C39A /* JYAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -183,6 +190,24 @@
 				46870E32F66F4A502D5316DE /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		D76AE76627F82825008C059D /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				D76AE76A27F82838008C059D /* loadingdata.json */,
+				D76AE76727F82838008C059D /* images */,
+			);
+			name = animation;
+			sourceTree = "<group>";
+		};
+		D76AE76727F82838008C059D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D76AE76827F82838008C059D /* img_1.png */,
+				D76AE76927F82838008C059D /* img_0.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		D893EF69ED811EC75A3C8ACA /* Pods */ = {
@@ -281,8 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				D76AE76D27F82838008C059D /* loadingdata.json in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				D76AE76C27F82838008C059D /* img_0.png in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				D76AE76B27F82838008C059D /* img_1.png in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,12 +336,14 @@
 				"${BUILT_PRODUCTS_DIR}/JYJSWebSDK/JYJSWebSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/SKJavaScriptBridge/SKJavaScriptBridge.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JYJSWebSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKJavaScriptBridge.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -506,6 +536,10 @@
 				GCC_PREFIX_HEADER = "JYJSWebSDK/JYJSWebSDK-Prefix.pch";
 				INFOPLIST_FILE = "JYJSWebSDK/JYJSWebSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JYJSWebSDK/ChannelTraceSDK/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
@@ -526,6 +560,10 @@
 				GCC_PREFIX_HEADER = "JYJSWebSDK/JYJSWebSDK-Prefix.pch";
 				INFOPLIST_FILE = "JYJSWebSDK/JYJSWebSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JYJSWebSDK/ChannelTraceSDK/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";

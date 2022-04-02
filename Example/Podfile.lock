@@ -1,7 +1,9 @@
 PODS:
-  - JYJSWebSDK (1.0.2):
+  - JYJSWebSDK (1.0.4):
+    - lottie-ios (~> 2.5.3)
     - SKJavaScriptBridge (~> 1.0.3)
     - SVProgressHUD
+  - lottie-ios (2.5.3)
   - SKJavaScriptBridge (1.0.3)
   - SVProgressHUD (2.2.5)
 
@@ -10,6 +12,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - lottie-ios
     - SKJavaScriptBridge
     - SVProgressHUD
 
@@ -18,7 +21,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JYJSWebSDK: ea8e6fc656de2751231ecf9f451cf6661ca677f1
+  JYJSWebSDK: b867c5229e79ac3e96978323332d18c5fda44552
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   SKJavaScriptBridge: 1485c4d7853615a71e55beb3fb662f63e54d0f30
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 

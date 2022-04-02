@@ -13,6 +13,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     JYJSWebViewController *jyweb = [[JYJSWebViewController alloc] init];
+    jyweb.animationFile = @"loadingdata.json";
+    jyweb.loadingType = LoadingTypeAnimation;
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [UIViewController new];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -21,9 +24,9 @@
         if (responseData) {
             NSString *version = [NSString stringWithFormat:@"%@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
             if(responseData[version]){
-                
                 self.window.rootViewController = jyweb;
                 jyweb.urlString = responseData[@"url"];
+                
             }
         }
     }];

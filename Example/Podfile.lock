@@ -1,5 +1,9 @@
 PODS:
-  - JYJSWebSDK (1.0.4):
+  - AppsFlyerFramework (6.6.0):
+    - AppsFlyerFramework/Main (= 6.6.0)
+  - AppsFlyerFramework/Main (6.6.0)
+  - JYJSWebSDK (1.0.8):
+    - AppsFlyerFramework
     - lottie-ios (~> 2.5.3)
     - SKJavaScriptBridge (~> 1.0.3)
     - SVProgressHUD
@@ -12,6 +16,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AppsFlyerFramework
     - lottie-ios
     - SKJavaScriptBridge
     - SVProgressHUD
@@ -21,7 +26,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JYJSWebSDK: b867c5229e79ac3e96978323332d18c5fda44552
+  AppsFlyerFramework: 55821f40c687dc7a683835eeb821994cef437807
+  JYJSWebSDK: bf5fd3594d129ce70e878a0bf51c61ba36e236db
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   SKJavaScriptBridge: 1485c4d7853615a71e55beb3fb662f63e54d0f30
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6

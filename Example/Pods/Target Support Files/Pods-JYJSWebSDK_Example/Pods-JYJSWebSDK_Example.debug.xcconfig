@@ -1,9 +1,9 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/JYJSWebSDK" "${PODS_CONFIGURATION_BUILD_DIR}/SKJavaScriptBridge" "${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/JYJSWebSDK" "${PODS_CONFIGURATION_BUILD_DIR}/SKJavaScriptBridge" "${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios" "${PODS_ROOT}/AppsFlyerFramework" "${PODS_XCFRAMEWORKS_BUILD_DIR}/AppsFlyerFramework/Main"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/JYJSWebSDK/JYJSWebSDK.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SKJavaScriptBridge/SKJavaScriptBridge.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD/SVProgressHUD.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios/Lottie.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "JYJSWebSDK" -framework "Lottie" -framework "QuartzCore" -framework "SKJavaScriptBridge" -framework "SVProgressHUD" -framework "UIKit" -framework "WebKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "AppsFlyerLib" -framework "CoreTelephony" -framework "JYJSWebSDK" -framework "Lottie" -framework "QuartzCore" -framework "SKJavaScriptBridge" -framework "SVProgressHUD" -framework "Security" -framework "SystemConfiguration" -framework "UIKit" -framework "WebKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

@@ -16,6 +16,7 @@
 #import <Photos/Photos.h>
 #import <Lottie/Lottie.h>
 #import "appSize.h"
+#import <AppsFlyerLib/AppsFlyerLib.h>
 
 #define WeakSelf __weak typeof(self) weakSelf = self
 
@@ -36,8 +37,10 @@
     return self;
 }
 
+
 - (void)setUrlString:(NSString *)urlString {
     _urlString = urlString;
+    NSLog(@"load urlString=%@", urlString);
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
 }
 
@@ -142,6 +145,24 @@
     [_bridge registerHandler:@"UploadAvatarPhoto" handler:^(id data, WVJBResponseCallback responseCallback) {
         self.uploadAvatarResponseCallback = responseCallback;
         [self checkPhotoPermission];
+    }];
+    
+    [_bridge registerHandler:@"AFLogEvent" handler:^(id data, WVJBResponseCallback responseCallback) {
+        if (data) {
+            if ([data isKindOfClass:[NSDictionary class]]) {
+                if ([data[@"test"] isEqualToString:@"1"]) {
+                    NSError *error;
+                    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&error];
+                    if(!error) {
+                        NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+                        [SVProgressHUD showInfoWithStatus:json];
+                    }else {
+                        [SVProgressHUD showInfoWithStatus:@"json解析错误"];
+                    }
+                }
+                [[AppsFlyerLib shared] logEvent:data[@"eventName"] withValues:data];
+            }
+        }
     }];
     
    
@@ -500,6 +521,33 @@
 
         }];
     }
+}
+
+#pragma mark Appsflyer
+
+- (void)setAppId:(NSString *)appId {
+    _appId = appId;
+    if (_appId) {
+        [[AppsFlyerLib shared] setAppleAppID:_appId];
+        
+    }
+}
+
+- (void)setAppsflyerKey:(NSString *)appsflyerKey {
+    _appsflyerKey = appsflyerKey;
+    if (_appsflyerKey) {
+        [[AppsFlyerLib shared] setAppsFlyerDevKey:_appsflyerKey];
+     
+    }
+}
+
+-(void)setAppsflyerDebug:(BOOL)appsflyerDebug {
+    _appsflyerDebug = appsflyerDebug;
+    [AppsFlyerLib shared].isDebug = appsflyerDebug;
+}
+
+- (void)appsflyerStart {
+    [[AppsFlyerLib shared] start];
 }
 
 #pragma mark - UIImagePickerControllerDelegate

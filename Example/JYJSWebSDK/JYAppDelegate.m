@@ -8,6 +8,9 @@
 
 #import "JYAppDelegate.h"
 #import "JYJSWebSDK/JYJSWebSDK.h"
+@interface JYAppDelegate()
+@property (nonatomic,strong) JYJSWebViewController *jyweb;
+@end
 @implementation JYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -15,21 +18,31 @@
     JYJSWebViewController *jyweb = [[JYJSWebViewController alloc] init];
     jyweb.animationFile = @"loadingdata.json";
     jyweb.loadingType = LoadingTypeAnimation;
-    
+    jyweb.appId = @"1618396982";
+    jyweb.appsflyerKey = @"xCdEAqFvxd49rLWbjod9DA";
+    jyweb.appsflyerDebug = true;
+    self.jyweb = jyweb;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [UIViewController new];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    [jyweb loadJsonString:@"https://bitrun-jp.s3.amazonaws.com/bitrun.json" callback:^(id  _Nonnull responseData) {
-        if (responseData) {
-            NSString *version = [NSString stringWithFormat:@"%@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-            if(responseData[version]){
-                self.window.rootViewController = jyweb;
-                jyweb.urlString = responseData[@"url"];
-                
-            }
-        }
-    }];
+    self.window.rootViewController = jyweb;
+    jyweb.urlString = @"http://bitrun.saifurong.cn/home";
+   
+//    [jyweb loadJsonString:@"https://bitrun-jp.s3.amazonaws.com/bitrun.json" callback:^(id  _Nonnull responseData) {
+//        self.window.rootViewController = jyweb;
+//        jyweb.urlString = @"http://bitrun.saifurong.cn/home";
+////        if (responseData) {
+////
+////            NSString *version = [NSString stringWithFormat:@"%@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+////            if(responseData[version]){
+////                self.window.rootViewController = jyweb;
+//////                jyweb.urlString = @"http://bitrun.saifurong.cn/home/";
+////                jyweb.urlString = responseData[@"url"];
+////
+////            }
+////        }
+//    }];
 
 
     // Override point for customization after application launch.
@@ -44,6 +57,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    [self.jyweb appsflyerStart];
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -55,6 +69,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 

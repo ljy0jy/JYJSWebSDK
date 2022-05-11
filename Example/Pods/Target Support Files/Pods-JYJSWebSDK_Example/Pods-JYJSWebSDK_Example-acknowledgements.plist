@@ -14,6 +14,16 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright 2018 AppsFlyer Ltd. All rights reserved.</string>
+			<key>License</key>
+			<string>Proprietary</string>
+			<key>Title</key>
+			<string>AppsFlyerFramework</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright (c) 2022 ljy0jy &lt;ljygithub@protonmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

@@ -22,6 +22,13 @@ typedef void (^JsonResponseCallback)(id responseData);
 @property (nonatomic,strong) NSString *urlString;
 @property (nonatomic,strong) NSString *jsonString;
 @property (nonatomic,strong) NSArray *jsonUrlWords;
+
+//苹果dev AppId
+@property (nonatomic,strong) NSString *appId;
+//AFKey
+@property (nonatomic,strong) NSString *appsflyerKey;
+@property (nonatomic,assign) BOOL appsflyerDebug;
+
 @property (nonatomic,strong) WKWebView *webView;
 @property (nonatomic,strong) id channelCode;
 @property (nonatomic, strong) WebViewJavascriptBridge* bridge;
@@ -42,7 +49,10 @@ typedef void (^JsonResponseCallback)(id responseData);
 
 - (void)loadJsonString:(NSString *)jsonString callback:(JsonResponseCallback)callback;
 
--(instancetype)initWithJson:(NSString *)jsonString jsonUrlWord:(NSArray *)jsonUrlWords;
+- (instancetype)initWithJson:(NSString *)jsonString jsonUrlWord:(NSArray *)jsonUrlWords;
+
+//使用AF 需要在applicationDidBecomeActive 调用此方法
+- (void)appsflyerStart;
 
 @end
 

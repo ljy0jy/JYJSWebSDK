@@ -1,6 +1,10 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## AppsFlyerFramework
+
+Copyright 2018 AppsFlyer Ltd. All rights reserved.
+
 ## JYJSWebSDK
 
 Copyright (c) 2022 ljy0jy <ljygithub@protonmail.com>

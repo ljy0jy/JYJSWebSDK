@@ -1,6 +1,6 @@
 {
   "name": "JYJSWebSDK",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "summary": "A short description of JYJSWebSDK.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/ljy0jy/JYJSWebSDK",
@@ -13,11 +13,12 @@
   },
   "source": {
     "git": "https://github.com/ljy0jy/JYJSWebSDK.git",
-    "tag": "1.0.4"
+    "tag": "1.0.8"
   },
   "platforms": {
     "ios": "9.0"
   },
+  "static_framework": true,
   "source_files": "JYJSWebSDK/Classes/**/*",
   "dependencies": {
     "SVProgressHUD": [
@@ -28,6 +29,9 @@
     ],
     "lottie-ios": [
       "~>  2.5.3"
+    ],
+    "AppsFlyerFramework": [
+
     ]
   }
 }

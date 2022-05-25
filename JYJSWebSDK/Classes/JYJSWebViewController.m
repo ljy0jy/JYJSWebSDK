@@ -33,6 +33,7 @@
     if (self = [super init]) {
         self.jsonString = jsonString;
         self.jsonUrlWords = jsonUrlWords;
+        [[AppsFlyerLib shared] waitForATTUserAuthorizationWithTimeoutInterval:60];
     }
     return self;
 }
@@ -547,6 +548,11 @@
 }
 
 - (void)appsflyerStart {
+    if (@available(iOS 14, *) ){
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+          NSLog(@"Status: %lu", (unsigned long)status);
+        }];
+    }
     [[AppsFlyerLib shared] start];
 }
 

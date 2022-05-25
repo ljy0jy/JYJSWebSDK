@@ -7,9 +7,11 @@
 
 #pod trunk push JYJSWebSDK.podspec
 ## pod spec lint JYJSWebSDK.podspec --verbose --use-libraries --allow-warnings
+
+##https://www.jianshu.com/p/9de438f8f406 迷之Bug 在这里解决  --skip-import-validation
 Pod::Spec.new do |s|
   s.name             = 'JYJSWebSDK'
-  s.version          = '1.0.8'
+  s.version          = '1.0.9'
   s.summary          = 'A short description of JYJSWebSDK.'
 
 # This description is used to generate tags and improve search results.
